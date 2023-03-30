@@ -16,6 +16,6 @@ public class ModelServiceImpl extends ServiceImpl<ModelDao, Model> implements IM
     private int id;
     @Override
     public boolean save(Model model) {
-        return modelDao.insert(model) > 0;
+        return modelDao.insert(model) > 1;
     }
 }
