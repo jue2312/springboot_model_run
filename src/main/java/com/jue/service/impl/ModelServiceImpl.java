@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ModelServiceImpl extends ServiceImpl<ModelDao, Model> implements IModelService {
     @Autowired ModelDao modelDao;
-
+    private int id;
     @Override
     public boolean save(Model model) {
         return modelDao.insert(model) > 0;
