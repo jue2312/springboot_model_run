@@ -4,7 +4,6 @@ import com.jue.domain.Model;
 import com.jue.service.impl.ModelServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 /**

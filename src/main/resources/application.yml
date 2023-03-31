@@ -6,6 +6,8 @@ spring:
     url: jdbc:mysql://dsy:3306/db01
     username: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+  banner:
+    location: 阿弥陀佛.txt
 mybatis-plus:
   global-config:
     db-config:
