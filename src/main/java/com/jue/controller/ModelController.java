@@ -38,6 +38,7 @@ public class ModelController {
 
     @GetMapping("/{id}")
     public Model getById(@PathVariable Integer id){
+        System.out.println();
         return modelService.getById(id);
     }
 }
