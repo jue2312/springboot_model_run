@@ -3,10 +3,7 @@ package com.jue.controller;
 import com.jue.domain.Model;
 import com.jue.service.impl.ModelServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,22 +17,27 @@ public class ModelController {
     private ModelServiceImpl modelService;
 
     @GetMapping
-    public List<Model> getAll(){
-        return modelService.list();
+    public List<Model> getAll() {
+        return modelService.getAll();
     }
 
     @PostMapping
-    public boolean getSave(){
-        Model model=new Model();
-        model.setName("ll");
-        model.setModelParameter("ldsdal");
-        model.setJar("ldsdsal");
-        model.setInputSourceRule("ddll");
-        model.setOutputSourceRule("l23l");
-        model.setJarDriver("dsadll");
-        model.setBusinessInformation("ldsl");
+    public boolean save(@RequestBody Model model) {
         return modelService.save(model);
     }
 
+    @PutMapping
+    public boolean update(@RequestBody Model model) {
+        return modelService.modify(model);
+    }
 
+    @DeleteMapping("/{id}")
+    public boolean delete(@PathVariable Integer id) {
+        return modelService.delete(id);
+    }
+
+    @GetMapping("/{id}")
+    public Model getById(@PathVariable Integer id){
+        return modelService.getById(id);
+    }
 }
