@@ -1,5 +1,6 @@
 package com.jue.controller;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.jue.domain.Model;
 import com.jue.service.impl.ModelServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import java.util.List;
  */
 @RestController()
 @RequestMapping("/models")
+@TableName("tb_model")
 public class ModelController {
     @Autowired
     private ModelServiceImpl modelService;
