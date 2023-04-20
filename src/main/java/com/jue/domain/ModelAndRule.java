@@ -1,5 +1,6 @@
 package com.jue.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -7,6 +8,7 @@ import lombok.Data;
  * @author Pride
  */
 @Data
+@AllArgsConstructor
 public class ModelAndRule {
     private Integer id;
     private Integer pid;

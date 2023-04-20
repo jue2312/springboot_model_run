@@ -25,7 +25,6 @@ public class RuleServiceImpl extends ServiceImpl<RuleDao, Rule> implements IRule
 
     @Override
     public boolean modify(Rule rule) {
-
         return ruleDao.updateById(rule) >0;
     }
 

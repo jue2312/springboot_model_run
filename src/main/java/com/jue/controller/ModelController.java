@@ -2,6 +2,8 @@ package com.jue.controller;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.jue.domain.Model;
+import com.jue.domain.ModelAndRule;
+import com.jue.service.impl.ModelAndRuleServiceImpl;
 import com.jue.service.impl.ModelServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,58 +14,57 @@ import java.util.List;
  */
 @RestController()
 @RequestMapping("/models")
-@TableName("tb_model")
 public class ModelController {
     @Autowired
-    private ModelServiceImpl modelService;
+    private ModelAndRuleServiceImpl modelAndRuleService;
 
     /**
-     * 获取所有信息
+     * 获取获取Model表和Rule表的全部信息 关联条件id
      * @return
      */
     @GetMapping
-    public List<Model> getAll() {
-        return modelService.getAll();
+    public List<ModelAndRule> getAll() {
+        return modelAndRuleService.getAll();
     }
 
     /**
-     * 添加一条数据
-     * @param model
+     * 向Model表和Rule表中添加一条记录
+     * @param
      * @return
      */
     @PostMapping
-    public boolean save(@RequestBody Model model) {
-        return modelService.save(model);
+    public boolean save(@RequestBody ModelAndRule modelAndRule) {
+        return modelAndRuleService.save(modelAndRule);
     }
 
     /**
-     * 根据实体修改信息
-     * @param model
+     * 根据ModelAndRule信息修改Model表和Rule表中的信息
+     * @param modelAndRule
      * @return
      */
     @PutMapping
-    public boolean update(@RequestBody Model model) {
-        return modelService.modify(model);
+    public boolean update(@RequestBody ModelAndRule modelAndRule) {
+        return modelAndRuleService.modify(modelAndRule);
     }
 
     /**
-     * 根据id删除记录
+     * 根据id删除Model表和Rule表中的记录
      * @param id
      * @return
      */
     @DeleteMapping("/{id}")
     public boolean delete(@PathVariable Integer id) {
-        return modelService.delete(id);
+        return modelAndRuleService.delete(id);
     }
 
     /**
-     * 根据id查询记录
+     * 根据id查询Model表和Rule表中的记录
      * @param id
      * @return
      */
     @GetMapping("/{id}")
     public Model getById(@PathVariable Integer id){
         System.out.println();
-        return modelService.getById(id);
+        return modelAndRuleService.getById(id);
     }
 }

@@ -1,25 +1,31 @@
 package com.jue.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.jue.dao.ModelAndRuleDao;
 import com.jue.domain.Model;
+import com.jue.domain.ModelAndRule;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
-public interface IModelService extends IService<Model> {
+/**
+ * @author Pride
+ */
+public interface IModelAndRuleService extends IService<ModelAndRule> {
     /**
      * 添加一条记录
-     * @param model
+     * @param
      * @return
      */
     @Override
-    boolean save(Model model);
+    boolean save(ModelAndRule modelAndRule);
 
     /**
      * 根据model修改记录
-     * @param model
+     * @param modelAndRuleDao
      * @return
      */
-    boolean modify(Model model);
+    boolean modify(ModelAndRule modelAndRuleDao);
 
     /**
      * 根据id删除记录
@@ -39,11 +45,6 @@ public interface IModelService extends IService<Model> {
      * 查询所有记录
      * @return
      */
-    List<Model> getAll();
 
-    /**
-     * 查询id
-     * @return
-     */
-
+    List<ModelAndRule> getAll();
 }
