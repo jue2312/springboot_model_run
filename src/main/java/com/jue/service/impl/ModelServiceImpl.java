@@ -14,7 +14,8 @@ import java.util.List;
  */
 @Service
 public class ModelServiceImpl extends ServiceImpl<ModelDao, Model> implements IModelService {
-    @Autowired ModelDao modelDao;
+    @Autowired
+    private ModelDao modelDao;
     @Override
     public boolean save(Model model) {
         return modelDao.insert(model) > 0;
@@ -22,7 +23,7 @@ public class ModelServiceImpl extends ServiceImpl<ModelDao, Model> implements IM
 
     @Override
     public boolean modify(Model model){
-        return modelDao.insert(model) > 0;
+        return modelDao.updateById(model) > 0;
     }
 
     @Override
