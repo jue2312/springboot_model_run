@@ -1,10 +1,8 @@
 package com.jue.controller;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.jue.domain.Model;
 import com.jue.domain.ModelAndRule;
 import com.jue.service.impl.ModelAndRuleServiceImpl;
-import com.jue.service.impl.ModelServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -14,7 +12,7 @@ import java.util.List;
  */
 @RestController()
 @RequestMapping("/models")
-public class ModelController {
+public class ModelAndRuleController {
     @Autowired
     private ModelAndRuleServiceImpl modelAndRuleService;
 
