@@ -1,10 +1,7 @@
 package com.jue.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.jue.dao.ModelAndRuleDao;
-import com.jue.domain.Model;
 import com.jue.domain.ModelAndRule;
-import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -36,10 +33,11 @@ public interface IModelAndRuleService extends IService<ModelAndRule> {
 
     /**
      * 根据id查询记录
+     *
      * @param id
      * @return
      */
-    Model getById(Integer id);
+    ModelAndRule getById(Integer id);
 
     /**
      * 查询所有记录

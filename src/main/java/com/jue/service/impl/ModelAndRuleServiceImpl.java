@@ -5,7 +5,6 @@ import com.jue.controller.utils.GetModelAndRule;
 import com.jue.dao.ModelAndRuleDao;
 import com.jue.dao.ModelDao;
 import com.jue.dao.RuleDao;
-import com.jue.domain.Model;
 import com.jue.domain.ModelAndRule;
 import com.jue.service.IModelAndRuleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,8 +43,8 @@ public class ModelAndRuleServiceImpl extends ServiceImpl<ModelAndRuleDao, ModelA
     }
 
     @Override
-    public Model getById(Integer id) {
-        return null;
+    public ModelAndRule getById(Integer id) {
+        return modelAndRuleDao.getById(id);
     }
 
     @Override

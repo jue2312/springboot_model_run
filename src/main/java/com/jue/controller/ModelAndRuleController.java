@@ -1,10 +1,7 @@
 package com.jue.controller;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.jue.domain.Model;
 import com.jue.domain.ModelAndRule;
 import com.jue.service.impl.ModelAndRuleServiceImpl;
-import com.jue.service.impl.ModelServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -14,7 +11,7 @@ import java.util.List;
  */
 @RestController()
 @RequestMapping("/models")
-public class ModelController {
+public class ModelAndRuleController {
     @Autowired
     private ModelAndRuleServiceImpl modelAndRuleService;
 
@@ -59,12 +56,12 @@ public class ModelController {
 
     /**
      * 根据id查询Model表和Rule表中的记录
+     *
      * @param id
      * @return
      */
     @GetMapping("/{id}")
-    public Model getById(@PathVariable Integer id){
-        System.out.println();
+    public ModelAndRule getById(@PathVariable Integer id){
         return modelAndRuleService.getById(id);
     }
 }
