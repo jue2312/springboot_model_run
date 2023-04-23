@@ -34,7 +34,9 @@ public class ModelAndRuleServiceImpl extends ServiceImpl<ModelAndRuleDao, ModelA
 
     @Override
     public boolean modify(ModelAndRule modelAndRule) {
-        return false;
+        boolean x = modelDao.updateById(GetModelOrRule.getModel(modelAndRule)) > 0;
+        boolean y = ruleDao.updateById(GetModelOrRule.getRule(modelAndRule)) > 0;
+        return x==y;
     }
 
     @Override
