@@ -1,6 +1,7 @@
 package com.jue.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.jue.controller.utils.GetModelOrRule;
 import com.jue.dao.ModelAndRuleDao;
 import com.jue.dao.ModelDao;
 import com.jue.dao.RuleDao;
@@ -26,9 +27,9 @@ public class ModelAndRuleServiceImpl extends ServiceImpl<ModelAndRuleDao, ModelA
 
     @Override
     public boolean save(ModelAndRule modelAndRule) {
-        boolean x = modelDao.insert(modelAndRule.getModel()) > 0;
-        boolean y = ruleDao.insert(modelAndRule.getRule()) > 0;
-        return x == y;
+        boolean x = modelDao.insert(GetModelOrRule.getModel(modelAndRule)) > 0;
+        boolean y = ruleDao.insert(GetModelOrRule.getRule(modelAndRule)) > 0;
+        return x == y == true;
     }
 
     @Override
@@ -38,7 +39,9 @@ public class ModelAndRuleServiceImpl extends ServiceImpl<ModelAndRuleDao, ModelA
 
     @Override
     public boolean delete(Integer id) {
-        return false;
+        boolean x = modelDao.deleteById(id) > 0;
+        boolean y = ruleDao.deleteById(id) > 0;
+        return x==y;
     }
 
     @Override
