@@ -25,6 +25,11 @@ public class ModelAndRuleServiceImpl extends ServiceImpl<ModelAndRuleDao, ModelA
     @Autowired
     private ModelAndRuleDao modelAndRuleDao;
 
+    /**
+     * 将ModelAndRule分成Model实体类和Rule实体类
+     * @param modelAndRule
+     * @return
+     */
     @Override
     public boolean save(ModelAndRule modelAndRule) {
         boolean x = modelDao.insert(GetModelOrRule.getModel(modelAndRule)) > 0;

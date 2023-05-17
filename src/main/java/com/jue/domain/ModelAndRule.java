@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ModelAndRule {
     private Integer id;
+
     private Integer pid;
     private String name;
     private String businessInformation;
