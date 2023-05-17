@@ -11,7 +11,7 @@ public class Model {
     private Integer id;
     private String name;
     private Integer pid;
-    private String businessInformation ;
+    private String businessInformation;
     private String jarDriver;
     private String jar;
     private String modelParameter;
