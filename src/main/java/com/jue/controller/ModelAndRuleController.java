@@ -66,10 +66,4 @@ public class ModelAndRuleController {
     public ModelAndRule getById(@PathVariable Integer id){
         return modelAndRuleService.getById(id);
     }
-    @PostMapping("pop")
-    public Model po(@RequestBody Model model){
-        System.out.println(model);
-//        System.out.println(rule);
-        return model;
-    }
 }
