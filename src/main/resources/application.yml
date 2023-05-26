@@ -1,9 +1,9 @@
 server:
-  port: 7777
+  port: 57777
 spring:
   datasource:
-    password: 3388047303
-    url: jdbc:mysql://jue:58066/db01
+    password: 201030
+    url: jdbc:mysql://localhost:58066/db01
     username: root
     driver-class-name: com.mysql.cj.jdbc.Driver
   banner:
